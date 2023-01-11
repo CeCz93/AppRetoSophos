@@ -1,0 +1,15 @@
+<resources>
+    <!--
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=3D:82:DC:F7:55:51:FD:6E:6A:B9:8D:62:47:1F:D5:0B:BC:B2:70:52%3Bcom.example.appretosophos.maps
+
+    Package name:
+    com.example.appretosophos.maps
+
+    SHA-1 certificate fingerprint:
+    3D:82:DC:F7:55:51:FD:6E:6A:B9:8D:62:47:1F:D5:0B:BC:B2:70:52
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDvH3ON_Hk-t9up05vtS-E9VQ2fQlsrxTU</string>
+</resources>

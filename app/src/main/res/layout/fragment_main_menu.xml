@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".mainmenu.MainMenuFragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.appretosophos.model.DocumentsViewModel" />
+        <variable
+            name="mainMenuFragment"
+            type="com.example.appretosophos.mainmenu.MainMenuFragment" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textViewWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_padding"
+                android:layout_marginTop="@dimen/default_margin"
+                android:text="Hola Carlos !!"
+                android:textColor="@color/Blue"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/imageViewMainMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_padding"
+                android:adjustViewBounds="true"
+                android:importantForAccessibility="no"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewWelcome"
+                app:srcCompat="@drawable/group_2_main_menu_sophosimg" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSendDocument"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:padding="@dimen/default_padding"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewMainMenu"
+                app:strokeColor="@color/DeepPink"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:padding="@dimen/default_padding">
+
+                    <ImageView
+                        android:id="@+id/imageViewSendDocument"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:importantForAccessibility="no"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/group_2_main_menu_send_document"
+                        app:tint="@color/DeepPink" />
+
+                    <TextView
+                        android:id="@+id/textViewSendDocument"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/default_padding"
+                        android:text="@string/send_documents"
+                        android:textSize="20sp"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                        android:textColor="@color/DeepPink"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewSendDocument"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/buttonSendDocument"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:backgroundTint="@color/white"
+                        android:text="@string/enter"
+                        android:textColor="@color/DeepPink"
+                        app:cornerRadius="10dp"
+                        app:icon="@drawable/group_2_main_menu_arrow"
+                        app:iconGravity="end"
+                        app:iconTint="@color/DeepPink"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imageViewSendDocument"
+                        app:strokeColor="@color/DeepPink"
+                        app:strokeWidth="1dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardViewDocument"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:padding="@dimen/default_padding"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardSendDocument"
+                app:strokeColor="@color/Blue"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/default_padding">
+
+                    <ImageView
+                        android:id="@+id/imageViewViewDocument"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:importantForAccessibility="no"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/group_2_main_menu_see_document"
+                        app:tint="@color/Blue" />
+
+                    <TextView
+                        android:id="@+id/textViewViewDocument"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/default_padding"
+                        android:text="@string/view_documents"
+                        android:textSize="20sp"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                        android:textColor="@color/Blue"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewViewDocument"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/buttonViewDocument"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:text="@string/enter"
+                        android:textColor="@color/Blue"
+                        app:backgroundTint="@color/white"
+                        app:icon="@drawable/group_2_main_menu_arrow"
+                        app:iconGravity="end"
+                        app:iconTint="@color/Blue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imageViewViewDocument"
+                        app:strokeColor="@color/Blue"
+                        app:strokeWidth="1dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardOffices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/default_margin"
+                android:padding="@dimen/default_padding"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardViewDocument"
+                app:strokeColor="@color/Mosque"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/default_padding">
+
+                    <ImageView
+                        android:id="@+id/imageViewOffices"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:importantForAccessibility="no"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/group_2_main_menu_see_locations"
+                        app:tint="@color/Mosque" />
+
+                    <TextView
+                        android:id="@+id/textViewOffices"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/default_padding"
+                        android:text="@string/view_offices"
+                        android:textSize="20sp"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                        android:textColor="@color/Mosque"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewOffices"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/buttonOffices"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:text="@string/enter"
+                        android:textColor="@color/Mosque"
+                        app:backgroundTint="@color/white"
+                        app:icon="@drawable/group_2_main_menu_arrow"
+                        app:iconGravity="end"
+                        app:iconTint="@color/Mosque"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imageViewOffices"
+                        app:strokeColor="@color/Mosque"
+                        app:strokeWidth="1dp"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

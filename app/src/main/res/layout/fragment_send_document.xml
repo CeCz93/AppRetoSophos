@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".documents.SendDocumentFragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.appretosophos.model.DocumentsViewModel" />
+        <variable
+            name="sendDocumentFragment"
+            type="com.example.appretosophos.documents.SendDocumentFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/default_padding">
+
+            <TextView
+                android:id="@+id/textViewAddDocument"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:text="@string/send_document_title"
+                android:textColor="@color/MineShaft"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Envio de documentación" />
+
+            <ImageView
+                android:id="@+id/imageViewAddDocument"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:adjustViewBounds="true"
+                android:importantForAccessibility="no"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewAddDocument"
+                app:srcCompat="@drawable/group_3_send_document_camera_logo"
+                app:tint="@color/BalticSea" />
+
+            <TextView
+                android:id="@+id/textViewDocumentType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_padding"
+                android:text="@string/document_type"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewAddDocument" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupDocumentType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDocumentType">
+
+                <RadioButton
+                    android:id="@+id/radioButtonDocumentType1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.documentType.equals(@string/document_type_1)}"
+                    android:onClick="@{() -> viewModel.setDocumentType(@string/document_type_1)}"
+                    android:text="@string/document_type_1" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonDocumentType2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:checked="@{viewModel.documentType.equals(@string/document_type_2)}"
+                    android:onClick="@{() -> viewModel.setDocumentType(@string/document_type_2)}"
+                    android:text="@string/document_type_2" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonDocumentType3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:checked="@{viewModel.documentType.equals(@string/document_type_3)}"
+                    android:onClick="@{() -> viewModel.setDocumentType(@string/document_type_3)}"
+                    android:text="@string/document_type_3" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonDocumentType4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:checked="@{viewModel.documentType.equals(@string/document_type_4)}"
+                    android:onClick="@{() -> viewModel.setDocumentType(@string/document_type_4)}"
+                    android:text="@string/document_type_4" />
+
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputDocumentNumber"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_padding"
+                android:hint="@string/document_number"
+                app:hintTextColor="@color/BalticSea"
+                app:startIconDrawable="@drawable/group_3_send_document_id"
+                app:startIconTint="@color/BalticSea"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/radioGroupDocumentType"
+                app:boxStrokeColor="@color/BalticSea">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/TextInputDocumentNumberEdittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputName"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_padding"
+                android:hint="@string/names"
+                app:hintTextColor="@color/BalticSea"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/TextInputDocumentNumber"
+                app:boxStrokeColor="@color/BalticSea">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/TextInputNameEdittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputLastName"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_padding"
+                android:hint="@string/lastNames"
+                app:hintTextColor="@color/BalticSea"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/TextInputName"
+                app:boxStrokeColor="@color/BalticSea">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/TextInputLastNameEdittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputEmail"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_padding"
+                android:hint="@string/email"
+                app:hintTextColor="@color/BalticSea"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/TextInputLastName"
+                app:boxStrokeColor="@color/BalticSea">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/TextInputEmailEdittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textViewCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_padding"
+                android:text="@string/city"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TextInputEmail" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupCity1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCity">
+
+                <RadioButton
+                    android:id="@+id/radioButtonCity1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.city.equals(@string/city_1)}"
+                    android:onClick="@{() -> viewModel.setCity(@string/city_1)}"
+                    android:text="@string/city_1" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCity2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:checked="@{viewModel.city.equals(@string/city_2)}"
+                    android:onClick="@{() -> viewModel.setCity(@string/city_2)}"
+                    android:text="@string/city_2" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCity3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:checked="@{viewModel.city.equals(@string/city_3)}"
+                    android:onClick="@{() -> viewModel.setCity(@string/city_3)}"
+                    android:text="@string/city_3" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioGroupCity2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroupCity1">
+
+                <RadioButton
+                    android:id="@+id/radioButtonCity4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.city.equals(@string/city_4)}"
+                    android:onClick="@{() -> viewModel.setCity(@string/city_4)}"
+                    android:text="@string/city_4" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCity5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:checked="@{viewModel.city.equals(@string/city_5)}"
+                    android:onClick="@{() -> viewModel.setCity(@string/city_5)}"
+                    android:text="@string/city_5" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCity6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:checked="@{viewModel.city.equals(@string/city_6)}"
+                    android:onClick="@{() -> viewModel.setCity(@string/city_6)}"
+                    android:text="@string/city_6" />
+
+
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/textViewFileType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_padding"
+                android:text="@string/file_type"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroupCity2" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupFileType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewFileType">
+
+                <RadioButton
+                    android:id="@+id/radioButtonFileType1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.fileType.equals(@string/file_type_1)}"
+                    android:onClick="@{() -> viewModel.setFileType(@string/file_type_1)}"
+                    android:text="@string/file_type_1" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonFileType2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:checked="@{viewModel.fileType.equals(@string/file_type_2)}"
+                    android:onClick="@{() -> viewModel.setFileType(@string/file_type_2)}"
+                    android:text="@string/file_type_2" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonFileType3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:checked="@{viewModel.fileType.equals(@string/file_type_3)}"
+                    android:onClick="@{() -> viewModel.setFileType(@string/file_type_3)}"
+                    android:text="@string/file_type_3" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/buttonAddDocument"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:text="@string/add_document"
+                app:backgroundTint="@color/Rose"
+                app:icon="@drawable/group_3_send_document_attach_file"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/radioGroupFileType"
+                app:cornerRadius="10dp"
+                />
+
+            <Button
+                android:id="@+id/buttonAddDocumentCamera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:text="@string/add_document_c"
+                app:backgroundTint="@color/Rose"
+                app:icon="@drawable/photo_camera_white_24dp"
+                app:layout_constraintStart_toEndOf="@id/buttonAddDocument"
+                app:layout_constraintTop_toTopOf="@id/buttonAddDocument"
+                app:cornerRadius="10dp"
+                />
+
+            <Button
+                android:id="@+id/buttonSendDocument"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:text="@string/send_document"
+                app:backgroundTint="@color/Rose"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonAddDocument"
+                app:cornerRadius="10dp"
+                />
+
+            <ImageView
+                android:id="@+id/imageViewTest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonSendDocument" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

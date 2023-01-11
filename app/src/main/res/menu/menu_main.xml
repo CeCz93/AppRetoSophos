@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuMainSendDocument"
+        android:icon="@drawable/group_2_main_menu_send_document"
+        android:title="@string/send_documents"/>
+    <item
+        android:id="@+id/menuMainViewDocuments"
+        android:title="@string/view_documents"
+        android:icon="@drawable/group_2_main_menu_see_document"/>
+    <item
+        android:id="@+id/menuMainOffices"
+        android:title="@string/view_offices"
+        android:icon="@drawable/group_2_main_menu_see_locations"
+        />
+    <item
+        android:id="@+id/menuMainLogOut"
+        android:checkable="false"
+        android:icon="@drawable/logout_black_24dp"
+        android:title="@string/log_out"
+         />
+
+</menu>

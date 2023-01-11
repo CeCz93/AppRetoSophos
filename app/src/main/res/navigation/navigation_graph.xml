@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/logInFragment">
+
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.example.appretosophos.login.LoginFragment"
+        android:label="Log in"
+        tools:layout="@layout/fragment_log_in">
+        <action
+            android:id="@+id/action_logInFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.example.appretosophos.mainmenu.MainMenuFragment"
+        android:label="Menu Principal"
+        tools:layout="@layout/fragment_main_menu">
+        <action
+            android:id="@+id/action_mainMenuFragment_to_sendDocumentFragment"
+            app:destination="@id/sendDocumentFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_viewDocumentsFragment"
+            app:destination="@id/viewDocumentsFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_logInFragment"
+            app:destination="@id/logInFragment"
+            app:popUpTo="@id/logInFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendDocumentFragment"
+        android:name="com.example.appretosophos.documents.SendDocumentFragment"
+        android:label="Enviar Documento"
+        tools:layout="@layout/fragment_send_document">
+        <action
+            android:id="@+id/action_sendDocumentFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment"
+            app:popUpTo="@id/mainMenuFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewDocumentsFragment"
+        android:name="com.example.appretosophos.viewdocuments.ViewDocumentsFragment"
+        android:label="Documentos Enviados"
+        tools:layout="@layout/fragment_view_documents">
+        <action
+            android:id="@+id/action_viewDocumentsFragment_to_displayDocumentFragment"
+            app:destination="@id/displayDocumentFragment" />
+        <action
+            android:id="@+id/action_viewDocumentsFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment"
+            app:popUpTo="@id/mainMenuFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/displayDocumentFragment"
+        android:name="com.example.appretosophos.viewdocuments.DisplayDocumentFragment"
+        android:label="Documento Adjunto"
+        tools:layout="@layout/fragment_display_document">
+        <argument
+            android:name="documentID"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_displayDocumentFragment_to_viewDocumentsFragment"
+            app:destination="@id/viewDocumentsFragment"
+            app:popUpTo="@id/viewDocumentsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.appretosophos.maps.MapsFragment"
+        android:label="Ubicación Oficinas"
+        tools:layout="@layout/fragment_maps">
+        <action
+            android:id="@+id/action_mapsFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment"
+            app:popUpTo="@id/mainMenuFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

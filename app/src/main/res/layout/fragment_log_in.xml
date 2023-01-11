@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".login.LoginFragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.appretosophos.model.DocumentsViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/default_padding">
+
+
+            <ImageView
+                android:id="@+id/imageViewLogoSophos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:importantForAccessibility="no"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/group_1_login_sophosimg" />
+
+            <TextView
+                android:id="@+id/textViewWelcome1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/welcome_2"
+                android:textAlignment="center"
+                android:textColor="@color/ElectricViolet"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewLogoSophos" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputMail"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/mail"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewWelcome1"
+                app:startIconDrawable="@drawable/group_1_login_account"
+                app:startIconTint="@color/ElectricViolet"
+                app:helperText="@string/helper"
+                app:helperTextTextColor="@color/red"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/ElectricViolet"
+                app:boxStrokeColor="@color/ElectricViolet">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputMailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textEmailAddress"
+                    tools:ignore="TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputPassword"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="@string/password"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textInputMail"
+                app:startIconDrawable="@drawable/group_1_login_key"
+                app:startIconTint="@color/ElectricViolet"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/ElectricViolet"
+                app:helperText="@string/helper"
+                app:helperTextTextColor="@color/red"
+                app:boxStrokeColor="@color/ElectricViolet">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/TextInputPasswordEdittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textPassword"
+                    tools:ignore="TextContrastCheck"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/buttonEnter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="15dp"
+                android:text="@string/enter"
+                app:backgroundTint="@color/ElectricViolet"
+                app:cornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/TextInputPassword" />
+
+            <Button
+                android:id="@+id/buttonFingerPrint"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                android:text="@string/enter_finger_print"
+                android:textColor="@color/ElectricViolet"
+                app:cornerRadius="20dp"
+                app:icon="@drawable/group_1_login_fingerprint"
+                app:iconTint="@color/ElectricViolet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonEnter"
+                app:strokeColor="@color/ElectricViolet" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

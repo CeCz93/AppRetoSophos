@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">App Reto Sophos</string>
+    <string name="credenciales">juanmalondon@yahoo.com 5Pq2VY6C002f</string>
+
+    <string name="helper">Obligario*</string>
+    <string name="welcome_2">Ingresa tus datos para acceder</string>
+    <string name="mail">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="enter">Ingresar</string>
+    <string name="enter_finger_print">Ingresar con huella</string>
+
+    <string name="toast_1">Por favor ingrese su correo y contraseña!!!</string>
+    <string name="toast_2">Usuario o contraseña incorrectos!!!</string>
+    <string name="toast_3">Error de conexión!!!</string>
+    <string name="toast_4">La cámara no se encuentra disponible!!!</string>
+    <string name="toast_5">La galería no se encuentra disponible!!!</string>
+    <string name="toast_6">Todos los campos son requeridos!!!</string>
+    <string name="toast_7">Error enviando el documento!!!</string>
+    <string name="toast_8">Documento enviado exitosamente!!!</string>
+    <string name="toast_9">No hay correo y contraseñas guardadas!!!</string>
+
+    <string name="send_documents">Enviar documentos</string>
+    <string name="view_documents">Ver documentos</string>
+    <string name="view_offices">Ver oficinas</string>
+    <string name="log_out">Cerrar sesión </string>
+
+    <string name="send_document_title">Envio de documentación</string>
+    <string name="document_type">Tipo de documento</string>
+    <string name="document_type_1">CC</string>
+    <string name="document_type_2">TI</string>
+    <string name="document_type_3">CE</string>
+    <string name="document_type_4">PA</string>
+    <string name="document_number">Número de documento</string>
+    <string name="names">Nombres</string>
+    <string name="lastNames">Apellidos</string>
+    <string name="email">Correo electrónico</string>
+    <string name="city">Ciudad</string>
+    <string name="city_1">Chile</string>
+    <string name="city_2">U.S.A.</string>
+    <string name="city_3">Bogotá</string>
+    <string name="city_4">Medellín</string>
+    <string name="city_5">Panamá</string>
+    <string name="city_6">México D.F</string>
+    <string name="file_type">Tipo de archivo</string>
+    <string name="file_type_1">Certificado cuenta</string>
+    <string name="file_type_2">Cédula</string>
+    <string name="file_type_3">Factura</string>
+    <string name="file_type_4">Incapacidad</string>
+    <string name="send_document">Enviar</string>
+    <string name="add_document">Adjuntar</string>
+    <string name="add_document_c">Cámara</string>
+
+</resources>
